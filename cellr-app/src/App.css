@@ -1,8 +1,8 @@
-ul.taskList {
+ul.wineryList {
 	padding: 0 25px;
 }
 
-li.task {
+li.wine {
 	list-style-type: none;
 	font-family: Tahoma;
 	font-size: 1.2em;
@@ -10,7 +10,7 @@ li.task {
 	border-bottom: 1px solid #ccc;
 }
 
-li.task:hover .deleteTaskBtn {
+li.wine:hover .deleteTaskBtn {
 	visibility: visible;
 	opacity: 1;
 }
