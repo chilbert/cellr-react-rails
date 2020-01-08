@@ -13,7 +13,6 @@ class WineriesController < ApplicationController
       def update
         winery = Winery.find(params[:id])
         winery.update_attributes(winery_param)
-        render json: winery
       end
     
       def destroy
@@ -29,3 +28,4 @@ class WineriesController < ApplicationController
 
 
 end
+

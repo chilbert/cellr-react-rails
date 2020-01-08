@@ -22,8 +22,8 @@ Bottle.create(name: "Pinot Noir", vintage: "2012", variety: "Red", bottle_count:
 
 User.create(name: "Chase Hilbert", email: "chase@chasehilbert.com")
 
-UserBottles.create(user_id: "1", bottles_id: "1", count: "7")
-UserBottles.create(user_id: "1", bottles_id: "2", count: "6")
-UserBottles.create(user_id: "1", bottles_id: "3", count: "5")
-UserBottles.create(user_id: "1", bottles_id: "4", count: "2")
-UserBottles.create(user_id: "1", bottles_id: "5", count: "14")
+UserBottle.create(user_id: "1", bottles_id: "1", count: "7")
+UserBottle.create(user_id: "1", bottles_id: "2", count: "6")
+UserBottle.create(user_id: "1", bottles_id: "3", count: "5")
+UserBottle.create(user_id: "1", bottles_id: "4", count: "2")
+UserBottle.create(user_id: "1", bottles_id: "5", count: "14")
