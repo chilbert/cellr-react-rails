@@ -2,7 +2,7 @@ class UserBottlesController < ApplicationController
 
     def index
         user_bottles = UserBottle.all
-        render jason: user_bottles        
+        render json: user_bottles        
     end
 
     def create
