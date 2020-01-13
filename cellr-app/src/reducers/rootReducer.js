@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux'
 
-import wineriesReducer from './wineryReducer'
+import wineriesReducer from './wineriesReducer'
 
 const rootReducer = combineReducers({
   wineries: wineriesReducer,

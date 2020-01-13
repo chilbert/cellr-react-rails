@@ -1,18 +1,30 @@
-import React, { Component } from 'react';
-import './App.css';
-import WineryContainer from './components/WineryContainer'
+import React from 'react'
+import {
+  BrowserRouter as Router,
+  Route,
+  Link,
+  Redirect,
+  withRouter
+} from 'react-router-dom'
 
-class App extends Component {
-  render() {
+import './App.css'
+
+import Footer from './components/pageComponents/Footer'
+import Header from './components/pageComponents/Header'
+import Main from './containers/Main'
+
+
+const App = props => {
     return (
-      <div className="container">
-        <div className="header">
-          <h1>Wineries List</h1>
-        </div>
-        <WineryContainer />
+      <div className="App">
+        <Header />
+        <Router>
+          <Route path="/" component={Main} />
+        </Router>
+        <Footer />
       </div>
-    );
-  }
+    )
 }
 
-export default App;
+
+export default App
