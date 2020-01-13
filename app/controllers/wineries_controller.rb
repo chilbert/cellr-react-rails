@@ -23,7 +23,7 @@ class WineriesController < ApplicationController
       
       private
         def winery_param
-          params.require(:todo).permit(:name, :location)
+          params.require(:winery).permit(:name, :location)
         end
 
 
