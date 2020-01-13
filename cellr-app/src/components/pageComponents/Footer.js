@@ -2,7 +2,7 @@ import React from 'react'
 
 const Footer = () =>
   <div className="Footer">
-    <small> Cellr. App, 2020</small>
+    <small> Copyright Cellr. 2020</small>
   </div>
 
 export default Footer
