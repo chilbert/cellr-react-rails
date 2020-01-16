@@ -1,11 +1,33 @@
-import React from 'react'
-import Link from './Link'
+import React from "react";
+import { NavLink } from "react-router-dom";
 
-const NavBar = () =>
-      <div className="NavBar">
-        <Link url='/home' text='Home' />
-        <Link url='/cellar' text='Your Cellar' />
-        <Link url='/wineries' text='Wineries' />
+class Navbar extends React.Component {
+  render() {
+    return (
+      <div className="navBar">
+        <div className="navItem">
+          <NavLink to="/" exact>
+            Home
+          </NavLink>
+        </div>
+        <div className="navItem">
+          <NavLink to="/cellar" exact>
+            My Cellar
+          </NavLink>
+        </div>
+        <div className="navItem">
+          <NavLink to="/wineries" exact>
+            Wineries
+          </NavLink>
+        </div>
+        <div className="navItem">
+          <NavLink to="/bottles" exact>
+            Bottles
+          </NavLink>
+        </div>
       </div>
+    );
+  }
+}
 
-export default NavBar
+export default Navbar;

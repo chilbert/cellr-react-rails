@@ -36,3 +36,28 @@ export const addWinery = WineryData => {
       }
     };
   };
+
+
+  export const removeWinery = id => {
+    return async dispatch => {
+      try {
+        const response = await fetch(
+          `http://localhost:3000/api/v1/wineries/${id}`,
+          {
+            method: "DELETE",
+            body: JSON.stringify(id),
+            headers: {
+              "Content-Type": "application/json"
+            }
+          }
+        );
+        const data = await response.json();
+        dispatch({
+          type: "REMOVE_WINERY",
+          winery: data
+        });
+      } catch (err) {
+        console.log(err);
+      }
+    };
+  };
