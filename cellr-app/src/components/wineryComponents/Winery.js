@@ -3,8 +3,9 @@ import React, { Component } from 'react'
 class Winery extends Component {
 
     render() {
-        return 
+        return (
         <div>This is the Wine Single Page</div>
+        )
     }
 
 }

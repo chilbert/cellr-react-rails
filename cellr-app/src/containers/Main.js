@@ -1,8 +1,9 @@
 import React from 'react'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import { connect } from 'react-redux'
-import WineryList from '../components/WineryContainer'
+import WineryList from './WineryContainer'
 import Winery from '../components/wineryComponents/Winery'
+import NotFound from '../components/pageComponents/NotFound'
 
 class Main extends React.Component {
 

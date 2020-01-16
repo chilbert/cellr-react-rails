@@ -13,7 +13,7 @@ const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__
 const store = createStore(
   rootReducer,
   composeEnhancer(applyMiddleware(thunk)),
-)
+) 
 
 ReactDOM.render(
   <Provider store={store}>
