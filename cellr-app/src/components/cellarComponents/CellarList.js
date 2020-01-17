@@ -1,34 +1,20 @@
-import React, { Component } from 'react'
+import React from 'react'
 import Card from 'react-bootstrap/Card'
-import ListGroup from 'react-bootstrap/ListGroup'
-import ListGroupItem from 'react-bootstrap/ListGroupItem'
 import Col from 'react-bootstrap/Col'
-import Row from 'react-bootstrap/Row'
 
-class CellarList extends Component {
 
-    render() {
-        return (
-            <Row>
-            <Col xs={12} md={6} lg={3} >
-                <Card >
-                    <Card.Body>
-                        <Card.Title>Title:</Card.Title>
-                    </Card.Body>
-                    <ListGroup className="list-group-flush">
-                    <ListGroupItem>Variety:</ListGroupItem>
-                    <ListGroupItem>Vintage:</ListGroupItem>
-                    <ListGroupItem>Bottle Count: </ListGroupItem>
-                    </ListGroup>
-                    <Card.Body>
-                    <Card.Link >I drank this</Card.Link>
-                    </Card.Body>
-            </Card>
-          </Col>
-    </Row>
-        )
-    }
+const CellarCards = props => {
 
-}
+    return (
+                <Col xs={12} md={6} lg={3}>
+                    <Card key={props.id}>
+                        <Card.Body>
+                            <Card.Title>Title: {props.name} </Card.Title>
+                            <Card.Text>Location: {props.location}</Card.Text>
+                        </Card.Body>
+                    </Card>
+                </Col>
+        )}
 
-export default CellarList
+
+export default CellarCards

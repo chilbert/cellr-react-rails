@@ -1,9 +1,21 @@
 import React, { Component } from 'react'
-import CellarList from '../components/cellarComponents/CellarList'
+import CellarCards from '../components/cellarComponents/CellarList'
+import { connect } from "react-redux";
+import { getWineries, getFavorites } from "../Actions/actions";
+import Row from 'react-bootstrap/Row'
+
 
 class CellarContainer extends Component {
 
   state = {
+  }
+
+
+  async componentDidMount() {
+    
+    this.props.getWineries();
+    this.props.getFavorites();
+    this.getUser();
   }
 
   async getUser() {
@@ -14,17 +26,22 @@ class CellarContainer extends Component {
     })
   }
 
-  componentDidMount() {
-    this.getUser();
-  }
-  
 
   render() {
+debugger
     return (
       <div className="MyCellar">
         <h3>{this.state.name}'s Cellar</h3>
         <div className="WineList">
-          <CellarList className="cellar-list" />
+        <Row>
+        {this.props.wineries.map((a) => {
+          return (
+          <CellarCards className="cellar-cards"
+            key={a.id} name={a.name} location={a.location}
+           />
+          )
+        })}
+        </Row>
         </div>
       </div>
     )
@@ -32,4 +49,13 @@ class CellarContainer extends Component {
 }
 
 
-export default CellarContainer;
+export default connect(
+  state => ({
+    wineries: state.wineries.all,
+    favorites: state.favorites.all
+  }),
+  {
+    getWineries,
+    getFavorites
+  }
+)(CellarContainer);

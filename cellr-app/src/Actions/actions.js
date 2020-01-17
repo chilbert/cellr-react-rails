@@ -67,3 +67,46 @@ export const addWinery = WineryData => {
 //       }
 //     };
 //   };
+
+
+// Reservations Actions
+
+export const getFavorites = () => {
+    return async dispatch => {
+      try {
+        const response = await fetch("http://localhost:3000/api/v1/user_wineries");
+        const data = await response.json();
+        dispatch({
+          type: "GET_FAVORITES",
+          favorites: data
+        });
+      } catch (err) {
+        console.log(err);
+      }
+    };
+  };
+  
+//   export const addReservation = reservationData => {
+//     return async dispatch => {
+//       try {
+//         const response = await fetch(
+//           "http://localhost:3001/api/v1/reservations",
+//           {
+//             method: "POST",
+//             body: JSON.stringify(reservationData),
+//             headers: {
+//               "Content-Type": "application/json"
+//             }
+//           }
+//         );
+//         const data = await response.json();
+//         dispatch({
+//           type: "ADD_RESERVATION",
+//           reservation: data
+//         });
+//       } catch (err) {
+//         console.log(err);
+//       }
+//     };
+//   };
+  
