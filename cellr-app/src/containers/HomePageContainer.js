@@ -1,12 +1,13 @@
 import React, { Component } from "react";
 import { Jumbotron, Button } from 'react-bootstrap'
 import LazyHero from 'react-lazy-hero';
+import hero from './bg-hero.jpg'
 
 class HomePageContainer extends Component {
   render() {
     return (
       <div>
-        <LazyHero imageSrc="https://unsplash.it/2000/1000">
+        <LazyHero imageSrc={hero}>
           <h1>Welcome to Cellr.</h1>
         </LazyHero>
         <Jumbotron fluid className="home-hero">
