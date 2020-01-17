@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import CellarList from '../components/cellarComponents/CellarList'
-import Row from 'react-bootstrap/Row'
 
 class CellarContainer extends Component {
 

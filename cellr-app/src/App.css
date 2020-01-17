@@ -4,6 +4,10 @@
 	text-align: center;
 }
 
+nav {
+	margin-bottom: 15px;
+}
+
 
 /* homepage styles */
 
@@ -11,11 +15,11 @@
 	padding: 2rem;
 }
 
-/* Cellar Styles */
-
-.MyCellar {
-	margin-top: 2rem;
+.sc-AykKD {
+	margin-top:-15px;
 }
+
+/* Cellar Styles */
 
 .WineList {
 	margin-top: 3rem;
@@ -29,74 +33,8 @@
 
 /* Winery page Styles */
 
-
-ul.wineryList {
-	padding: 0 25px;
-}
-
-li.wine {
-	list-style-type: none;
-	font-family: Tahoma;
-	font-size: 1.2em;
-	padding: 10px 0;
-	border-bottom: 1px solid #ccc;
-}
-
-li.wine:hover .deleteTaskBtn {
-	visibility: visible;
-	opacity: 1;
-}
-
-input.taskCheckbox {
-	position: relative;
-	float: left;
-	margin-right: 10px;
-	-webkit-appearance: none;
-	width: 20px;
-	height: 20px;
-	border: 1px solid #ccc;
-	border-radius: 5px;
-	outline: none;
-	margin-left: 5px;
-	text-align: center;
-	cursor: pointer;
-	font-weight: bold;
-}
-
-input.taskCheckbox:checked:after {
-	color: green;
-	content: "\2713";
-	display: block;
-	font-size: 17px;
-	height: 17px;
-	position: absolute;
-	width: 17px;
-	left: 0.5px;
-	bottom: 2px;
-}
-
-input.taskCheckbox + label.taskLabel {
-	color: black;
-}
-
-input.taskCheckbox:checked + label.taskLabel {
-	text-decoration: line-through;
-	color: #656565;
-}
-
-input[placeholder] {
-	font-size: 1.1em;
-}
-
-.inputContainer {
-	padding: 15px;
-}
-
-.inputContainer .taskInput {
-	padding: 10px;
-	width: 100%;
-	border-radius: 25px;
-	box-sizing: border-box;
+.winery-form-section {
+	margin: 3rem;
 }
 
 

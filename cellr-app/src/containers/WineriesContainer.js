@@ -26,8 +26,13 @@ class WineriesContainer extends Component {
 
   render() {
     return (
-      <div> 
+      <div className="Wineries"> 
+      <h1>Wineries</h1>
+      <div className="winery-form-section"> 
+        <p>If you do not see your favorite wineries below, feel free to add them with the form.</p>
         <AddWineryForm addWinery={this.addWinery} />
+      </div>
+       
         <Row>
           {this.props.wineries.map((a) => {
                 return(
