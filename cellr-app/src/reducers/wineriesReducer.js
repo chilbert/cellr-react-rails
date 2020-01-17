@@ -1,6 +1,8 @@
+// Removed the removewinery action type for now
+
 function wineriesReducer(state = {all: [] }, action) {
 
-  let index;
+  // let idx;
 
   switch(action.type){
 
@@ -8,9 +10,9 @@ function wineriesReducer(state = {all: [] }, action) {
         return {...state, all: action.wineries}
       case 'ADD_WINERY':
         return {...state, all: state.all.concat(action.winery)}
-      case "REMOVE_WINERY":
-        index = state.findIndex(state => state.studio.id === action.id);
-        return [...state.slice(0, index), ...state.slice(index + 1)];
+      // case 'REMOVE_WINERY':
+      //   idx = state.findIndex(state => state.winery.id === action.winery);
+      //   return [...state.slice(0, idx), ...state.slice(idx + 1)];
       default:
         return state
     }

@@ -10,24 +10,26 @@ class WineriesContainer extends Component {
     this.props.getWineries();
   }
 
-  handleClick = event => {
-    this.props.removeWinery(this.props.id);
-  };
+  //Remove Winery reducer is not working properly
+
+  // handleClick = event => {
+  //   console.log('thisishandleclick:', event.target.id)
+  //   this.props.removeWinery(event.target.id);
+  // };
 
 
   render() {
     return (
       <div> 
         <AddWineryForm addWinery={this.addWinery} />
-      
-        <div className="listWrapper">
+        <div className="wineries">
           <ul className="wineryList">
               {this.props.wineries.map((a) => {
                 return(
                   <li className="wine"  key={a.id}>
                       <input className="taskCheckbox" type="checkbox" />              
                       <label className="taskLabel">{a.name}</label>
-                      <button className="deleteTaskBtn" onClick={this.handleClick}>x</button>
+                      {/* <button id={a.id} className="deleteTaskBtn" onClick={ event => this.handleClick(event)}>remove</button> */}
                   </li>
                 )       
             })} 	    
@@ -38,4 +40,4 @@ class WineriesContainer extends Component {
   }
 }
 
-export default connect(state => ({wineries: state.wineries.all}), {getWineries, removeWinery})(WineriesContainer)
+export default connect(state => ({wineries: state.wineries.all}),{getWineries})(WineriesContainer)

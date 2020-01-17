@@ -4,6 +4,6 @@ class Winery < ApplicationRecord
     validates :name, uniqueness: true
 
 
-    has_many :bottles
+    has_many :bottles, :dependent => :destroy
 
 end

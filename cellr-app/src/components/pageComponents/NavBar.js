@@ -1,33 +1,18 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import {Navbar, Nav } from 'react-bootstrap'
 
-class Navbar extends React.Component {
+class NavBar extends React.Component {
   render() {
     return (
-      <div className="navBar">
-        <div className="navItem">
-          <NavLink to="/" exact>
-            Home
-          </NavLink>
-        </div>
-        <div className="navItem">
-          <NavLink to="/cellar" exact>
-            My Cellar
-          </NavLink>
-        </div>
-        <div className="navItem">
-          <NavLink to="/wineries" exact>
-            Wineries
-          </NavLink>
-        </div>
-        <div className="navItem">
-          <NavLink to="/bottles" exact>
-            Bottles
-          </NavLink>
-        </div>
-      </div>
+      <Navbar bg="light" variant="light">
+        <Navbar.Brand href="/">Cellr</Navbar.Brand>
+        <Nav className="mr-auto">
+          <Nav.Link href="/cellar">Cellar</Nav.Link>
+          <Nav.Link href="/wineries">Wineries</Nav.Link>
+        </Nav>
+      </Navbar>
     );
   }
 }
 
-export default Navbar;
+export default NavBar;

@@ -9,6 +9,12 @@ class WineriesController < ApplicationController
         winery = Winery.create(winery_param)
         render json: winery
       end
+
+      def show
+        winery = Winery.find(params[:id])
+        render json: winery
+      end
+
     
       def update
         winery = Winery.find(params[:id])
