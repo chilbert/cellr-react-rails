@@ -11,6 +11,21 @@
 	padding: 2rem;
 }
 
+/* Cellar Styles */
+
+.MyCellar {
+	margin-top: 2rem;
+}
+
+.WineList {
+	margin-top: 3rem;
+}
+
+.card {
+	margin-bottom: 15px;
+}
+
+
 
 /* Winery page Styles */
 

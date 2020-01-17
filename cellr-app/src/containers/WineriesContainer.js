@@ -1,7 +1,13 @@
 import React, { Component } from 'react'
 import AddWineryForm from '../components/wineryComponents/AddWineryForm';
 import { connect } from 'react-redux';
-import { getWineries, removeWinery } from '../Actions/actions'
+import { getWineries } from '../Actions/actions'
+import Card from 'react-bootstrap/Card'
+import ListGroup from 'react-bootstrap/ListGroup'
+import ListGroupItem from 'react-bootstrap/ListGroupItem'
+import Col from 'react-bootstrap/Col'
+import Row from 'react-bootstrap/Row'
+
 
 class WineriesContainer extends Component {
   
@@ -22,19 +28,25 @@ class WineriesContainer extends Component {
     return (
       <div> 
         <AddWineryForm addWinery={this.addWinery} />
-        <div className="wineries">
-          <ul className="wineryList">
-              {this.props.wineries.map((a) => {
+        <Row>
+          {this.props.wineries.map((a) => {
                 return(
-                  <li className="wine"  key={a.id}>
-                      <input className="taskCheckbox" type="checkbox" />              
-                      <label className="taskLabel">{a.name}</label>
-                      {/* <button id={a.id} className="deleteTaskBtn" onClick={ event => this.handleClick(event)}>remove</button> */}
-                  </li>
-                )       
-            })} 	    
-          </ul>
-        </div>
+            <Col xs={12} md={6} lg={3} >
+                <Card className="wine" key={a.id}>
+                    <Card.Body>
+                        <Card.Title>Winery: {a.name}</Card.Title>
+                    </Card.Body>
+                    <ListGroup className="list-group-flush">
+                    <ListGroupItem>Location: {a.location}</ListGroupItem>
+                    </ListGroup>
+                    <Card.Body>
+                    <Card.Link >Favorite</Card.Link>
+                    </Card.Body>
+            </Card>
+          </Col>
+               )       
+              })} 
+        </Row>
       </div>
     )
   }

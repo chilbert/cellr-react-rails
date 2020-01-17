@@ -8,15 +8,10 @@ import WineriesContainer from './WineriesContainer'
 import CellarContainer from './CellarContainer'
 import NotFound from '../components/pageComponents/NotFound'
 
-
-
-
-
 class Main extends Component{
 
 render() {
     return (
-
         <div className="main">
             <Router>
                 <NavBar />
