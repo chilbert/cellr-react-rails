@@ -1,9 +1,14 @@
 class WineriesController < ApplicationController
 
-    def index
-        wineries = Winery.all
-        render json: wineries
-      end
+  def index
+    if params[:user_id]
+      user_winery = UserWinery.where(user_id: params[:user_id])
+      render json: user_winery
+    else
+      wineries = Winery.all
+      render json: wineries
+    end
+  end
     
       def create
         winery = Winery.create(winery_param)

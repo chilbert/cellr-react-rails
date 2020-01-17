@@ -5,6 +5,8 @@ class Winery < ApplicationRecord
 
 
     has_many :bottles, :dependent => :destroy
-    has_many :users
+    has_many :user_wineries
+    has_many :users, through: :user_wineries
+
 
 end

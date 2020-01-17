@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
   scope '/api/v1' do
     resources :bottles
-    resources :users
+    resources :users do
+      resources :wineries
+    end
     resources :wineries
     resources :user_bottles
     resources :user_wineries

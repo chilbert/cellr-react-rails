@@ -28,7 +28,6 @@ class CellarContainer extends Component {
 
 
   render() {
-debugger
     return (
       <div className="MyCellar">
         <h3>{this.state.name}'s Cellar</h3>
