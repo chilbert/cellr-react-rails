@@ -3,18 +3,32 @@ import Card from 'react-bootstrap/Card'
 import Col from 'react-bootstrap/Col'
 
 
-const CellarCards = props => {
+const CellarCards = ({ wineries, favorites }) => {
 
+
+    const wineriesDictionary = wineries.reduce((map, winery) => {
+        map[winery.id] = winery;
+        return map;
+      }, {});
+    
+
+    return favorites.map(fav => {   
+        const matchingWinery = wineriesDictionary[fav.winery_id];
+        
     return (
-                <Col xs={12} md={6} lg={3}>
-                    <Card key={props.id}>
+                <Col xs={12} md={6} lg={3} key={fav.id} > 
+                    <Card >
                         <Card.Body>
-                            <Card.Title>Title: {props.name} </Card.Title>
-                            <Card.Text>Location: {props.location}</Card.Text>
+                            <Card.Title>Winery Name: {matchingWinery.name} </Card.Title>
+                            <Card.Text>Location: {matchingWinery.location}</Card.Text>
                         </Card.Body>
                     </Card>
                 </Col>
-        )}
+
+    )})   
+}
+
+
 
 
 export default CellarCards

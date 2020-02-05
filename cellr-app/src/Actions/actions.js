@@ -74,7 +74,7 @@ export const addWinery = WineryData => {
 export const getFavorites = () => {
     return async dispatch => {
       try {
-        const response = await fetch("http://localhost:3000/api/v1/user_wineries");
+        const response = await fetch("http://localhost:3000/api/v1/users/1/wineries");
         const data = await response.json();
         dispatch({
           type: "GET_FAVORITES",
@@ -86,27 +86,28 @@ export const getFavorites = () => {
     };
   };
   
-//   export const addReservation = reservationData => {
-//     return async dispatch => {
-//       try {
-//         const response = await fetch(
-//           "http://localhost:3001/api/v1/reservations",
-//           {
-//             method: "POST",
-//             body: JSON.stringify(reservationData),
-//             headers: {
-//               "Content-Type": "application/json"
-//             }
-//           }
-//         );
-//         const data = await response.json();
-//         dispatch({
-//           type: "ADD_RESERVATION",
-//           reservation: data
-//         });
-//       } catch (err) {
-//         console.log(err);
-//       }
-//     };
-//   };
+  // export const addFavorite = favoriteData => {
+  //   debugger
+  //   return async dispatch => {
+  //     try {
+  //       const response = await fetch(
+  //         `http://localhost:3000/api/v1/user_wineries`,
+  //         {
+  //           method: "POST",
+  //           body: JSON.stringify(favoriteData),
+  //           headers: {
+  //             "Content-Type": "application/json"
+  //           }
+  //         }
+  //       );
+  //       const data = await response.json();
+  //       dispatch({
+  //         type: "ADD_FAVORITE",
+  //         favorites: data
+  //       });
+  //     } catch (err) {
+  //       console.log(err);
+  //     }
+  //   };
+  // };
   

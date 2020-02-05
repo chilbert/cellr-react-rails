@@ -7,6 +7,7 @@ import ListGroup from 'react-bootstrap/ListGroup'
 import ListGroupItem from 'react-bootstrap/ListGroupItem'
 import Col from 'react-bootstrap/Col'
 import Row from 'react-bootstrap/Row'
+import FavoriteWinery from '../components/wineryComponents/FavoriteWinery';
 
 
 class WineriesContainer extends Component {
@@ -21,7 +22,7 @@ class WineriesContainer extends Component {
   // handleClick = event => {
   //   console.log('thisishandleclick:', event.target.id)
   //   this.props.removeWinery(event.target.id);
-  // };
+  // };d
 
 
   render() {
@@ -36,8 +37,8 @@ class WineriesContainer extends Component {
         <Row>
           {this.props.wineries.map((a) => {
                 return(
-            <Col xs={12} md={6} lg={3} >
-                <Card className="wine" key={a.id}>
+            <Col xs={12} md={6} lg={3} key={a.id} >
+                <Card className="wine" >
                     <Card.Body>
                         <Card.Title>Winery: {a.name}</Card.Title>
                     </Card.Body>
@@ -45,7 +46,7 @@ class WineriesContainer extends Component {
                     <ListGroupItem>Location: {a.location}</ListGroupItem>
                     </ListGroup>
                     <Card.Body>
-                    <Card.Link >Favorite</Card.Link>
+                    <FavoriteWinery id={a.id}>Favorite</FavoriteWinery>
                     </Card.Body>
             </Card>
           </Col>

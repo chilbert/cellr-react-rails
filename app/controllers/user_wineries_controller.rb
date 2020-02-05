@@ -1,15 +1,13 @@
 class UserWineriesController < ApplicationController
 
     def index
-        binding.pry
-        user = User.find(uw_param: user_id)
-        user_wineries = UserWinery(find_by: user)
+        user_wineries = UserWinery.all
         render json: user_wineries       
     end
 
     def create
-        user_wineries = UserWinery.create(uw_params)
-        render json: user_winery
+        user_wineries = UserWinery.create(uw_param)
+        render json: user_wineries
     end
 
 

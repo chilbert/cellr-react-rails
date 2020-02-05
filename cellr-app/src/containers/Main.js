@@ -10,6 +10,23 @@ import NotFound from '../components/pageComponents/NotFound'
 
 class Main extends Component{
 
+    state = {
+        name: "Chase Hilbert"
+    }
+
+    // async getUser() {
+    //     const response = await fetch(`http://localhost:3000/api/v1/users/1`)
+    //     const data = await response.json()
+    //     this.setState({
+    //       name: data.name
+    //     })
+    //   }
+
+    // componentDidMount(){
+    //   this.getUser()
+    // }
+
+
 render() {
     return (
         <div className="main">
@@ -17,7 +34,7 @@ render() {
                 <NavBar />
                 <Switch>
                     <Route exact path="/" component={HomePageContainer} />
-                    <Route exact path="/cellar" component={CellarContainer} />
+                    <Route exact path='/cellar' render={(props) => <CellarContainer {...props} user={this.state.name} />} />
                     <Route exact path="/wineries" component={WineriesContainer} />
                     <Route exact path="/bottles" />
                     <Route component={NotFound} />

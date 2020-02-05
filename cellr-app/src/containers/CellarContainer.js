@@ -7,39 +7,26 @@ import Row from 'react-bootstrap/Row'
 
 class CellarContainer extends Component {
 
-  state = {
-  }
 
 
   async componentDidMount() {
-    
-    this.props.getWineries();
-    this.props.getFavorites();
-    this.getUser();
+    await Promise.all([
+      this.props.getWineries(),
+      this.props.getFavorites(),
+    ]);
   }
 
-  async getUser() {
-    const response = await fetch(`http://localhost:3000/api/v1/users/1`)
-    const data = await response.json()
-    this.setState({
-      name: data.name
-    })
-  }
 
 
   render() {
     return (
       <div className="MyCellar">
-        <h3>{this.state.name}'s Cellar</h3>
+        <h3>{this.props.user}'s Cellar</h3>
         <div className="WineList">
         <Row>
-        {this.props.wineries.map((a) => {
-          return (
           <CellarCards className="cellar-cards"
-            key={a.id} name={a.name} location={a.location}
+            favorites={this.props.favorites} wineries={this.props.wineries} 
            />
-          )
-        })}
         </Row>
         </div>
       </div>
