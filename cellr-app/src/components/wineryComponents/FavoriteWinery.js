@@ -26,17 +26,23 @@ class FavoriteWinery extends Component {
         .then(resp => resp.json())
         .then(data => {
           if (data.error) {
-            // Add logic to handle invalid comment creation
           }
         })
       }
+
+
+
+    // if favorited? {
+    //       Do nothing
+    //   }
+    //   else {
     
-  
     render() {
       return (
         <Button  id={this.props.id} onClick={this.handleClick}>Favorite</Button>
       );
     }
   }
+// }
   
   export default FavoriteWinery;

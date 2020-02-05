@@ -16,8 +16,6 @@ class CellarContainer extends Component {
     ]);
   }
 
-
-
   render() {
     return (
       <div className="MyCellar">

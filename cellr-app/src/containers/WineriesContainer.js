@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import AddWineryForm from '../components/wineryComponents/AddWineryForm';
 import { connect } from 'react-redux';
-import { getWineries } from '../Actions/actions'
+import { getWineries, getFavorites } from '../Actions/actions'
 import Card from 'react-bootstrap/Card'
 import ListGroup from 'react-bootstrap/ListGroup'
 import ListGroupItem from 'react-bootstrap/ListGroupItem'
@@ -13,19 +13,17 @@ import FavoriteWinery from '../components/wineryComponents/FavoriteWinery';
 class WineriesContainer extends Component {
   
 
-  componentDidMount() {
-    this.props.getWineries();
+  async componentDidMount() {
+    await Promise.all([
+      this.props.getWineries(),
+      this.props.getFavorites(),
+    ]);
   }
 
-  //Remove Winery reducer is not working properly
-
-  // handleClick = event => {
-  //   console.log('thisishandleclick:', event.target.id)
-  //   this.props.removeWinery(event.target.id);
-  // };d
-
+ 
 
   render() {
+    debugger
     return (
       <div className="Wineries"> 
       <h1>Wineries</h1>
@@ -58,4 +56,13 @@ class WineriesContainer extends Component {
   }
 }
 
-export default connect(state => ({wineries: state.wineries.all}),{getWineries})(WineriesContainer)
+export default connect(
+  state => ({
+    wineries: state.wineries.all,
+    favorites: state.favorites.all
+  }),
+  {
+    getWineries,
+    getFavorites
+  }
+)(WineriesContainer);
