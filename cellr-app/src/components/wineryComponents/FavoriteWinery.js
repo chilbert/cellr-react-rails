@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Button  from 'react-bootstrap/Button';
-
+import { addFavorite } from '../../Actions/actions'
+import { connect } from 'react-redux'
 
 class FavoriteWinery extends Component {
     
@@ -10,39 +11,15 @@ class FavoriteWinery extends Component {
 
     handleClick = event => {
         event.preventDefault()
-        this.postFavorite(this.state.favorite)
+        this.props.addFavorite(this.state.favorite);
     }
-    
-
-      postFavorite = favorite => {
-        return fetch(`http://localhost:3000/api/v1/user_wineries`, {
-        method: "POST",
-        body: JSON.stringify(favorite),
-        headers: {
-          'Content-Type': 'application/json',
-          Accept: 'application/json',
-        },
-      })
-        .then(resp => resp.json())
-        .then(data => {
-          if (data.error) {
-          }
-        })
-      }
-
-
-
-    // if favorited? {
-    //       Do nothing
-    //   }
-    //   else {
     
     render() {
       return (
-        <Button  id={this.props.id} onClick={this.handleClick}>Favorite</Button>
+        <Button id={this.props.id} onClick={ event => this.handleClick(event)}>Favorite</Button>
       );
     }
   }
-// }
+
   
-  export default FavoriteWinery;
+  export default connect(null, { addFavorite })(FavoriteWinery)

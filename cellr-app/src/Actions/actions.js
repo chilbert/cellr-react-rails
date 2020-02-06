@@ -86,28 +86,27 @@ export const getFavorites = () => {
     };
   };
   
-  // export const addFavorite = favoriteData => {
-  //   debugger
-  //   return async dispatch => {
-  //     try {
-  //       const response = await fetch(
-  //         `http://localhost:3000/api/v1/user_wineries`,
-  //         {
-  //           method: "POST",
-  //           body: JSON.stringify(favoriteData),
-  //           headers: {
-  //             "Content-Type": "application/json"
-  //           }
-  //         }
-  //       );
-  //       const data = await response.json();
-  //       dispatch({
-  //         type: "ADD_FAVORITE",
-  //         favorites: data
-  //       });
-  //     } catch (err) {
-  //       console.log(err);
-  //     }
-  //   };
-  // };
+  export const addFavorite = favoriteData => {
+    return async dispatch => {
+      try {
+        const response = await fetch(
+          `http://localhost:3000/api/v1/user_wineries`,
+          {
+            method: "POST",
+            body: JSON.stringify(favoriteData),
+            headers: {
+              "Content-Type": "application/json"
+            }
+          }
+        );
+        const data = await response.json();
+        dispatch({
+          type: "ADD_FAVORITE",
+          favorites: data
+        });
+      } catch (err) {
+        console.log(err);
+      }
+    };
+  };
   

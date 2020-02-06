@@ -22,8 +22,11 @@ handleChange = event => {
     createWinery = (e) => {
         //1.  Stop form from submitting
         e.preventDefault();
-        this.props.addWinery(this.state.winery)
-        
+        this.props.addWinery(this.state.winery);
+        //clear form fields
+        this.setState( {
+            winery: {name: "", location: ""}
+        })
     }
 
     render() {

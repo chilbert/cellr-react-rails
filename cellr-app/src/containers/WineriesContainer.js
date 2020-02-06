@@ -11,7 +11,7 @@ import FavoriteWinery from '../components/wineryComponents/FavoriteWinery';
 
 
 class WineriesContainer extends Component {
-  
+
 
   async componentDidMount() {
     await Promise.all([
@@ -20,10 +20,8 @@ class WineriesContainer extends Component {
     ]);
   }
 
- 
 
   render() {
-    debugger
     return (
       <div className="Wineries"> 
       <h1>Wineries</h1>
@@ -33,7 +31,7 @@ class WineriesContainer extends Component {
       </div>
        
         <Row>
-          {this.props.wineries.map((a) => {
+          {this.props.wineries.map(a => {
                 return(
             <Col xs={12} md={6} lg={3} key={a.id} >
                 <Card className="wine" >
@@ -44,7 +42,7 @@ class WineriesContainer extends Component {
                     <ListGroupItem>Location: {a.location}</ListGroupItem>
                     </ListGroup>
                     <Card.Body>
-                    <FavoriteWinery id={a.id}>Favorite</FavoriteWinery>
+                      <FavoriteWinery favorites={this.props.favorites} wineries={this.props.wineries} id={a.id}>Favorite</FavoriteWinery> 
                     </Card.Body>
             </Card>
           </Col>
