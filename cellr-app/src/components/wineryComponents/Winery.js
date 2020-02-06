@@ -7,7 +7,6 @@ class Winery extends Component {
         <div>This is the Wine Single Page</div>
         )
     }
-
 }
 
 export default Winery

@@ -13,8 +13,6 @@ export const getWineries = WineryData => {
           }
     }
 }
-
-
  
 export const addWinery = WineryData => {
     return async dispatch => {
@@ -39,37 +37,7 @@ export const addWinery = WineryData => {
 
 
 
-// Remove Winery Action -- This is hitting the database and removing the item, but not dispatching back to my container.  Getting an error for line 58 and then again on the Reducer with FindIndex function
-// Not a requirement so moving on to other items.
-
-
-//   export const removeWinery = id => {
-//     return async dispatch => {
-//       try {
-//         const response = await fetch(
-//           `http://localhost:3000/api/v1/wineries/${id}`,
-//           {
-//             method: "DELETE",
-//             headers: {
-//               "Content-Type": "application/json"
-//             },
-//             body: JSON.stringify({id}),
-//           }
-//         );
-//         const data = await response.json();
-//         dispatch({
-//           type: "REMOVE_WINERY",
-//           winery: data
-//         });
-       
-//       } catch (err) {
-//         console.log(err);
-//       }
-//     };
-//   };
-
-
-// Reservations Actions
+// Favorite Actions
 
 export const getFavorites = () => {
     return async dispatch => {
@@ -110,3 +78,30 @@ export const getFavorites = () => {
     };
   };
   
+
+  export const removeFavorite = result => {
+        return async dispatch => {
+          try {
+            const response = await fetch(
+              `http://localhost:3000/api/v1/user_wineries/${result}`,
+              {
+                method: "DELETE",
+                body: JSON.stringify(result),
+                headers: {
+                  "Content-Type": "application/json"
+                },
+              }
+            );
+            
+            const data = await response.json();
+            console.log(data)
+            dispatch({
+              type: "REMOVE_FAVORITE",
+              favorites: data
+            });
+           
+          } catch (err) {
+            console.log(err);
+          }
+        };
+      };

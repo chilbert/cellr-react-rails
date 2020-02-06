@@ -14,6 +14,8 @@ class UserWineriesController < ApplicationController
     def destroy
         user_winery = UserWinery.find(params[:id])
         user_winery.destroy
+        user_wineries = UserWinery.all
+        render json: user_wineries
     end
     
 
