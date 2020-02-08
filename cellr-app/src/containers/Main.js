@@ -14,18 +14,6 @@ class Main extends Component{
         name: "Chase Hilbert"
     }
 
-    // async getUser() {
-    //     const response = await fetch(`http://localhost:3000/api/v1/users/1`)
-    //     const data = await response.json()
-    //     this.setState({
-    //       name: data.name
-    //     })
-    //   }
-
-    // componentDidMount(){
-    //   this.getUser()
-    // }
-
 
 render() {
     return (

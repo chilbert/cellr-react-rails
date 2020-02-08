@@ -7,14 +7,11 @@ import Row from 'react-bootstrap/Row'
 
 class CellarContainer extends Component {
 
-
-
-  async componentDidMount() {
-    await Promise.all([
-      this.props.getWineries(),
-      this.props.getFavorites(),
-    ]);
-  }
+   componentDidMount() {
+     
+      this.props.getWineries()
+      this.props.getFavorites()
+}
 
   render() {
     return (

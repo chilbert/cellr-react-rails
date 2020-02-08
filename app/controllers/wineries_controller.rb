@@ -11,8 +11,12 @@ class WineriesController < ApplicationController
   end
     
       def create
-        winery = Winery.create(winery_param)
-        render json: winery
+        winery = Winery.new(winery_param)
+        if winery.save
+         render json: winery
+        else
+          render json: {error: winery.errors.full_messages}
+        end
       end
 
       def show

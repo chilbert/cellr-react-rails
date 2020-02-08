@@ -1,5 +1,4 @@
 function favoritesReducer(state = { all: [] }, action) {
-  console.log(state, action)
     switch (action.type) {
       case "GET_FAVORITES":
         return { ...state, all: action.favorites };

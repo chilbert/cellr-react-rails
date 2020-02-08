@@ -37,7 +37,9 @@ render() {
                     <Button id={this.props.id} onClick={ event => this.handleClick(event)}>Favorite</Button>
                 );
             } else {
-                return (<Button id={this.props.id} variant="danger" onClick={ event => this.handleRemove(event)} >Remove from Favorites</Button>)
+                return (
+                    <Button variant="danger" id={this.props.id} onClick={ event => this.handleRemove(event)}>Remove Favorite</Button>
+                )
             }
         }
   }
